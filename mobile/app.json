@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "Doxa",
+    "slug": "doxa",
+    "version": "1.0.0",
+    "scheme": "doxa",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#06080C",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#06080C"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.example.doxa",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.example.doxa",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#06080C"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#E8C26A",
+          "defaultChannel": "doxa"
+        }
+      ],
+      "expo-font",
+      "expo-splash-screen",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Doxa uses the camera only to scan the connection QR code shown on your PC.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Doxa uses the microphone when you tap the mic to talk to it."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Doxa sends the photos you pick to Doxa on your PC.",
+          "cameraPermission": "Doxa uses the camera to take a photo you send to Doxa on your PC.",
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}

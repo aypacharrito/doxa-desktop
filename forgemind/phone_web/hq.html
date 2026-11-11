@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>Doxa HQ</title>
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="hq.css">
+</head>
+<body>
+  <header class="hq-top">
+    <div class="hq-brand"><span class="hq-logo"></span>DOXA <b>HQ</b></div>
+    <div class="hq-campaign">
+      <div class="hq-name" id="name">Marketing team</div>
+      <div class="hq-goal" id="goal">Loading…</div>
+    </div>
+    <button type="button" class="hq-new" id="new-campaign">+ New campaign</button>
+    <div class="hq-stats" id="stats"></div>
+    <a class="hq-view" id="view-toggle" href="hq.html?3d">3D view</a>
+  </header>
+
+  <main class="hq-main">
+    <section class="hq-stage" id="stage" aria-label="The team">
+      <div class="hq-skyline" aria-hidden="true"></div>
+      <div class="hq-scene" id="scene">
+        <div class="hq-floor" id="floor">
+          <svg class="hq-belt" id="belt" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+      <div class="hq-caption" id="caption" hidden>
+        <small id="cap-step"></small>
+        <b id="cap-title"></b>
+        <span id="cap-text"></span>
+      </div>
+      <nav class="hq-tour" id="tour" aria-label="Rooms"></nav>
+    </section>
+    <div class="hq-side">
+      <aside class="hq-panel" id="panel" aria-live="polite"></aside>
+      <section class="hq-chat" id="chat" aria-label="Island chat">
+        <div class="hq-chat-head" id="chat-head">CHAT · DOXA</div>
+        <div class="hq-chat-log" id="chat-log" aria-live="polite"></div>
+        <form class="hq-chat-form" id="chat-form">
+          <textarea id="chat-text" rows="2" maxlength="12000" placeholder="Ask anything…"></textarea>
+          <button type="submit" class="hq-btn" id="chat-send">Send</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div class="hq-modal" id="modal" hidden>
+    <form class="hq-form" id="campaign-form">
+      <h2>New campaign</h2>
+      <p>One thing to grow, one goal you can measure. Doxa puts the team to work on it.</p>
+      <label>Name<input name="name" required maxlength="80" placeholder="Song: Midnight Drive"></label>
+      <label>One measurable goal<input name="goal" required maxlength="300" placeholder="1,000 Spotify saves before Dec 1"></label>
+      <label>Who it's for <small>optional</small><input name="audience" maxlength="300" placeholder="night drivers, 18-30"></label>
+      <label>Link or offer <small>optional</small><input name="offer" maxlength="300" placeholder="https://…"></label>
+      <div class="row">
+        <button type="submit" class="hq-btn">Start campaign</button>
+        <button type="button" class="hq-btn ghost" id="modal-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div class="hq-toast" id="toast" role="status" hidden></div>
+  <script src="hqart.js"></script>
+  <script src="hq.js"></script>
+  <script type="module" src="hq3d-boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e1318">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Doxa">
+  <title>Doxa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">DOXA</div>
+    <div class="meta" id="meta">Connecting…</div>
+    <a class="ghost" id="open-app" hidden>Open in app</a>
+    <button type="button" class="ghost" id="hq-open" aria-label="Your marketing team">Team</button>
+    <button type="button" class="ghost" id="screen-open" aria-label="See your PC screen">Screen</button>
+    <button type="button" class="stop" id="stop">Stop</button>
+  </header>
+
+  <main class="main" id="main">
+    <section class="hero" id="hero">
+      <div class="orb" id="orb" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+      <p class="hello" id="hello">Good to see you. Ask me anything, or tell me what to get done.</p>
+    </section>
+    <div class="messages" id="messages" aria-live="polite"></div>
+    <section class="card task" id="task" hidden>
+      <header><span class="dot" id="task-dot"></span><strong id="task-title">Browser task</strong></header>
+      <p class="task-goal" id="task-goal"></p>
+      <p class="task-result" id="task-result" hidden></p>
+      <ol class="task-log" id="task-log"></ol>
+      <div class="pending" id="pending" hidden></div>
+    </section>
+    <section class="card code" id="code" hidden>
+      <header><span class="dot" id="code-dot"></span><strong id="code-title">Code mode</strong>
+        <button type="button" class="btn small danger" id="code-stop" hidden>Stop</button></header>
+      <p class="task-goal" id="code-task"></p>
+      <ol class="code-log" id="code-log"></ol>
+      <p class="task-result" id="code-result" hidden></p>
+      <div class="code-ask">
+        <textarea id="code-input" rows="2" placeholder="Tell it what to do next…"></textarea>
+        <div class="row">
+          <select id="code-engine" aria-label="Engine"><option value="auto">Same / automatic</option></select>
+          <label><input type="checkbox" id="code-fresh"> New chat</label>
+          <button type="button" class="btn primary" id="code-send">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="screen-view" id="screen" hidden>
+    <header><strong>Your PC</strong><span class="meta" id="screen-meta">Connecting…</span>
+      <button type="button" class="btn small" id="screen-zoom">Zoom</button>
+      <button type="button" class="btn small" id="screen-close">Close</button></header>
+    <div class="screen-frame" id="screen-frame"><img id="screen-img" alt="Live view of your PC screen"></div>
+  </section>
+
+  <section class="locked" id="locked" hidden>
+    <div class="orb small" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+    <h1>Doxa</h1>
+    <p>Open your private link from <strong>Doxa → Phone access</strong> on your PC to connect this phone.</p>
+    <p class="muted" id="locked-reason"></p>
+  </section>
+
+  <form class="composer" id="composer">
+    <textarea id="input" rows="1" placeholder="Message Doxa…" required></textarea>
+    <button type="button" class="icon" id="mic" aria-label="Dictate" hidden>🎙</button>
+    <button type="submit" class="send" id="send">Send</button>
+  </form>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

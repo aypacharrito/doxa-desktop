@@ -15,7 +15,21 @@ This is a clean copy of version 1.38.2 with no accounts, keys, chats or personal
    3 for CPU only). It creates a private `.venv` folder here and installs what Doxa needs.
 4. Start Doxa with `START_DOXA.cmd` (setup also puts a Doxa shortcut on the desktop).
 
-Optional extras:
+## Install (Mac, experimental)
+
+Not tested on a Mac yet. Chat, paid AIs (Work), Code mode, plugins, the website builder and publishing should work.
+Windows-only parts (reading or controlling the screen, the always-on voice and Windows speech, the HQ window built
+into the app, the taskbar icon) are missing or fall back.
+
+1. Install [Python 3.12 for macOS](https://www.python.org/downloads/macos/) (it includes Tk), and run
+   `xcode-select --install` once for the local model engine.
+2. Download or clone this repository.
+3. In Terminal: `cd` into the folder and run `bash SETUP_MAC.command`.
+4. Start Doxa: `./START_DOXA_MAC.command` (or double-click it in Finder; the first time, right-click → Open).
+
+Keys are kept in the macOS Keychain and data in `~/Library/Application Support/ForgeMind`.
+
+## Optional extras (Windows)
 
 - `INSTALL_BROWSER_AGENT.bat`: browser tasks (uses Microsoft Edge).
 - `SETUP_PHONE_ACCESS.bat`: reach Doxa from your phone through a Cloudflare tunnel.

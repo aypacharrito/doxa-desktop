@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import os
+import sys
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from .workspace import DEFAULT_ROUTINES
@@ -13,7 +14,10 @@ from .model_library import URL as DEFAULT_MODEL_URL, NAME as DEFAULT_MODEL_NAME
 
 
 def app_data_dir() -> Path:
-    base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    if os.name != "nt" and "LOCALAPPDATA" not in os.environ:   # Mac / Linux
+        base = Path.home() / ("Library/Application Support" if sys.platform == "darwin" else ".local/share")
+    else:
+        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
     path = base / APP_NAME
     path.mkdir(parents=True, exist_ok=True)
     return path

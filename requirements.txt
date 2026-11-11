@@ -15,4 +15,4 @@ requests>=2.32,<3
 tzdata>=2026.1
 anthropic>=2.6,<3
 segno>=1.6,<2
-comtypes>=1.4,<2
+comtypes>=1.4,<2; sys_platform == "win32"
